@@ -1,44 +1,36 @@
-body{
-    background-color: rgba(58, 125, 151, 0.342);
-}
-h1{
-    color:rgb(175, 24, 24);
-    
-}
-    h2{
-    padding-left: 20px;
-}
-button{
-    background-color: black;
-    color: white;
-    margin-bottom: 20px;
-}
-button:hover{
-    background-color: blue;
-}
 div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.text{
     color: white;
-    border: 5px solid;
-    border-color: rgb(90, 90, 34);
-    background-color: rgb(36, 23, 23);
-    max-width: 200px;
-    max-height: 200px;
-    
+    font-size: 30px;
 }
-#div_2{
-    margin-top: 20px;
-    border:3px solid red;
+body{
+    background-image: url(https://i.pinimg.com/originals/71/4c/93/714c9373e922654f394fa8fff35fef36.gif);
+    background-repeat: repeat-x;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: contain;
+    background-color: rgb(27, 27, 27);
+}
+
+button{
+    border: 2px solid whitesmoke;
     background-color: rgb(0, 0, 0);
-    border-color: white;
+    padding: 15px 32px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 12px;
 }
 
-#cssTest{
-    color: green;
-    font-size: 70px;
-    border: 2px solid saddlebrown;
-}
-
-.classTest{
-    background-color: red;
-    color:white;
+button:hover{
+    border: 2px solid rgb(68, 67, 67);
+    background-color: rgb(255, 255, 255);
+    padding: 15px 32px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 12px;
 }
