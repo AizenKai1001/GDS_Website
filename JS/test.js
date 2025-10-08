@@ -68,6 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var moneyBox = document.getElementById("box");
     var clickBtn = document.getElementById("clickBtn");
     var resetBtn = document.getElementById("resetBtn");
+    var moreClickBtn = document.getElementById("morePerClickBtn");
     //set initial money
     var money = 0;
     var moneyPerClick = 1;
@@ -110,6 +111,19 @@ document.addEventListener('DOMContentLoaded', function() {
     clickBtn.addEventListener("click", function() {
         updateMoney();
         });
+
+
+    function moreClicks(){
+        moneyPerClick++
+
+        console.log("added more per click")
+    }
+
+
+    moreClickBtn.addEventListener("click", function(){
+        moreClicks();
+        console.log("Clicked moreclickbtn")
+    });
 
     //Reset game
     function resetGame(){
