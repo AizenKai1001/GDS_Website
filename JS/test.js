@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function() {
     //Add money 
     function updateMoney(){
         money += moneyPerClick;
-        updateMoneyBox(money * moneyPerClick);
+        updateMoneyBox(money);
     };
 
     clickBtn.addEventListener("click", function() {
