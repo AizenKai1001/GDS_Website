@@ -17,7 +17,7 @@
     <div>
         <!--Control and output for the "shoot" functionality-->
         <div>
-            <button id="trigger-button">Trigger</button>
+            <button id="trigger-button"><img src="../images/revolver.jpg"></button>
             <span id="trigger-display"></span>
         </div>
         <!--Control and output for the "reload" functionality-->
@@ -91,24 +91,39 @@
             c. Display the result on in the reloadDisplay by changing it's innerHTML
             d. EXTRA CHALLENGE: Figure out how much ammo to load. This will require some math based on how much ammo has been expended and the maximum amount ammo the weapon can hold
         --------------------------------------------------*/
-            function reload(event){
-            inventory--
-            if(inventory<0)
-            {
-                inventory=0
+            function reload(){
+            // Setting the needed amount to the max minus the current ammo
+            var neededAmmo = max - current;
+            console.log(neededAmmo);
+
+            // Setting the available ammo to the minimum between the needed ammo and inventory
+            var availableAmmo = Math.min(neededAmmo, inventory);
+            console.log(availableAmmo);
+
+            //Add the available ammo to current and subtract it from inventory
+            current += availableAmmo;
+            inventory -= availableAmmo;
+            console.log("Adding available ammo:"+current, "to current ammo, then subtracting from inventory:"+inventory);
+
+            if (inventory <= 0) {
+                inventory = 0; // Prevent inventory from going negative
+                reloadDisplay.innerHTML = `INVENTORY: NO AMMO CAN'T RELOAD`;
+            }else{                                                      // Update the inventory display
+                reloadDisplay.innerHTML = `INVENTORY: ${inventory}`;
             }
-            if(inventory > 0 && current < 6){
-                current ++
-                triggerDisplay.innerHTML = `AMMO: ${current}`
-                reloadDisplay.innerHTML = `INVENTORY: ${inventory}`
-            }
-            
+
+            // Update the ammo display
+            triggerDisplay.innerHTML = `AMMO: ${current}`;
         }
 
         reloadButton.addEventListener("click", function(){
-            reload(current, max)
+            reload("click", reload)
             
         });
     </script>
+
+    <style>
+        
+    </style>
 </body>
 </html>
