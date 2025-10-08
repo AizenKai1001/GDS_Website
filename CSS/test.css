@@ -49,11 +49,11 @@ body{
     padding: 20px;  
     transform: translate(-50%, -50%);
     position: absolute;
-    top: 50%;  
+    top: 15%;  
     left: 50%;
-    width: 50%;
+    width: 15%;
     text-align: center;
-    background-color: rgba(128, 128, 128, 0.2);
+    background-color: var(--bg-color);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     transition: background-color .6s ease, border .6s ease, color .6s ease, box-shadow .2s ease, animation .2s ease;
 }
@@ -70,4 +70,55 @@ body{
     50% { background-color: yellow; }
     75% { background-color: white; }
     100% { background-color: rgb(255, 0, 0); }
+}
+
+
+#clickBtn{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    font-size: 16px;
+    border: var(--text-color) 2px solid;
+    border-radius: 5px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color .6s ease, color .6s ease, box-shadow .2s ease;
+}
+#clickBtn:hover{
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+#clickBtn:active{
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transform: translate(-50%, -40%);
+}
+
+#resetBtn{
+    position: absolute;
+    top: 95%;
+    left: 95%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    font-size: 16px;
+    border: var(--text-color) 2px solid;
+    border-radius: 5px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color .6s ease, color .6s ease, box-shadow .2s ease;
+}
+#resetBtn:hover{
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+#resetBtn:active{
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transform: translate(-50%, -40%);
 }

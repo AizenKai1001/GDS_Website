@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var body = document.body;
     var rootStyle = document.documentElement.style;
 
+
     //set initial mode
     var mode = "light";
 
@@ -55,6 +56,74 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log("Mode is: " + mode, "and has been saved to local storage");
     }
     );
+    
+
+
+
+
+
+
+    // Start of Game code
+    //Get the money box
+    var moneyBox = document.getElementById("box");
+    var clickBtn = document.getElementById("clickBtn");
+    var resetBtn = document.getElementById("resetBtn");
+    //set initial money
+    var money = 0;
+    var moneyPerClick = 1;
+
+
+    // Update money box
+    function updateMoneyBox(amount){
+        moneyBox.textContent = "Money: $" + amount;
+        saveGame();
+        console.log("Money updated, current money is: " + money, "And game saved");
+    }
+
+
+    // Load game data from local storage
+    function loadGame(){
+        if (localStorage.getItem("money")) {
+            money = parseInt(localStorage.getItem("money"));
+            console.log("Loaded money from local storage: " + money);
+        if (localStorage.getItem("moneyPerClick")) {
+            moneyPerClick = parseInt(localStorage.getItem("moneyPerClick"));
+            console.log("Loaded moneyPerClick from local storage: " + moneyPerClick);
+        } else {
+            console.log("no values  found in local storage, setting to defaults");
+        
+    }}};
+
+    // Save game data from local storage
+    function saveGame(){
+        localStorage.setItem("money", money);
+        localStorage.setItem("moneyPerClick", moneyPerClick);
+        console.log("Game saved");
+    };
+
+    //Add money 
+    function updateMoney(){
+        money += moneyPerClick;
+        updateMoneyBox(money * moneyPerClick);
+    };
+
+    clickBtn.addEventListener("click", function() {
+        updateMoney();
+        });
+
+    //Reset game
+    function resetGame(){
+        money = money * 0;
+        moneyPerClick = 1; 
+        updateMoneyBox(money);
+    };
+
+    resetBtn.addEventListener("click", function() {
+        resetGame();
+    });
+
+    loadGame();
+    updateMoneyBox(money)
 });
 
 
