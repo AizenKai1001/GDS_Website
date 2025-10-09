@@ -7,6 +7,7 @@
     <title>Week 2 Gun Program</title>
     <!--PUT YOUR NAME IN THE META TAG FOR AUTHOR-->
     <meta name="author" content="Jancarlos Espinal">
+    <link rel="stylesheet" href="../CSS/reload.css">
     <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
     <meta name="description" content="Small programming assignment using events, variables, functions and conditional logic">
 
@@ -14,6 +15,10 @@
 <body>
     <!--Main content of the site-->
     <div>
+        <h1 class="main-text">GUN PROGRAM</h1>
+        <h2 class="main-text">Click the gun to shoot and the reload button to reload</h2>
+        <h3 class="main-text">Max Ammo: 6 | Starting Ammo: 6 | Inventory: 10</h3>
+        <h3 class="main-text">By: Jancarlos Espinal</h3>
         <!--Control and output for the "shoot" functionality-->
         <div>
             <button id="trigger-button"><img src="../images/homework/revolver.jpg"></button>
@@ -145,47 +150,5 @@
 
         });
     </script>
-
-    <style>
-        #trigger-button{
-            background-color: transparent;
-            border: none;
-        }
-        #trigger-button:hover{
-            cursor: pointer;
-            background-color: #0000000a;
-            border-radius: 70px;
-            transform: translateY(-2px);
-            transition: .2s ease-out;
-        }
-        #trigger-button:active{
-            transform: translateY(2px);
-            transform: rotate(353deg);
-        }
-
-
-
-        #reload-button{
-            background-color: transparent;
-            border: none;
-            
-        }
-        #reload-button:hover{
-            cursor: pointer;
-            background-color: #0000000a;
-            border-radius: 70px;
-            transform: translateY(-2px);
-            transition: .2s ease-out;
-        }
-        #reload-button.active{
-            animation: spin 0.5s linear;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg);}
-            100% { transform: rotate(360deg);}
-        }
-
-    </style>
 </body>
 </html>

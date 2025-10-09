@@ -1,0 +1,80 @@
+:root{
+    --text-color: white;
+    --box-shadow-color-n: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
+    --box-shadow-color-h: 0 4px 8px 0 rgba(255, 255, 255, 0.543), 0 6px 20px 0 rgba(255, 255, 255, 0.617);
+    --text-shadow-color: 1px 1px 2px red, 0 0 25px yellow, 0 0 5px darkblue; /*glow effect: first color is the shadow, second is the glow , third is the inner glow */
+}
+/* Center everything vertically and horizontally */
+body{ 
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    background-color: black;
+    font-family: 'fantasy', 'papyrus';
+}
+
+.main-text{
+    color: var(--text-color);
+    text-shadow: var(--text-shadow-color);
+    text-align: center;
+    
+}
+
+
+#trigger-button{
+    background-color: transparent;
+    border: none;
+    box-shadow: var(--box-shadow-color-n);
+    border-radius: 70px;
+    transition: all .2 ease-in-out;  
+}
+#trigger-button:hover{
+    cursor: pointer;
+    background-color: #ffffff0a;
+    transform: translateY(-2px);
+    transition: .2s ease-out;
+    box-shadow: var(--box-shadow-color-h);
+}
+#trigger-button:active{
+    transform: translateY(2px);
+    transform: rotate(353deg);
+}
+#trigger-display{
+    color: var(--text-color);
+    text-shadow: var(--text-shadow-color);
+    font-size: 20px;
+    margin-left: 15px;
+}
+
+
+
+#reload-button{
+    background-color: transparent;
+    border: none;
+    border-radius: 100px;
+    box-shadow: var(--box-shadow-color-n);  
+    transition: all .2 ease-in-out;  
+}
+#reload-button:hover{
+    cursor: pointer;
+    background-color: #ffffff0a;
+    border-radius: 70px;
+    transform: translateY(-2px);
+    transition: .2s ease-out;  
+    box-shadow: var(--box-shadow-color-h);  
+
+}
+#reload-button.active{
+    animation: spin 0.5s linear;
+}
+#reload-display{
+    color: var(--text-color);
+    text-shadow: var(--text-shadow-color);
+    font-size: 20px;
+    margin-left: 15px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(360deg);}
+}
