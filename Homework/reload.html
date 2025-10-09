@@ -10,19 +10,18 @@
     <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
     <meta name="description" content="Small programming assignment using events, variables, functions and conditional logic">
 
-    <link rel="stylesheet" href="../CSS/test.css">
 </head>
 <body>
     <!--Main content of the site-->
     <div>
         <!--Control and output for the "shoot" functionality-->
         <div>
-            <button id="trigger-button"><img src="../images/revolver.jpg"></button>
+            <button id="trigger-button"><img src="../images/homework/revolver.jpg"></button>
             <span id="trigger-display"></span>
         </div>
         <!--Control and output for the "reload" functionality-->
         <div>
-            <button id="reload-button">Reload</button>
+            <button id="reload-button"><img src="../images/homework/reload.png" style="width: 60px; height: 60px;"></button>
             <span id="reload-display"></span>
         </div>
     </div>
@@ -74,8 +73,13 @@
             if(current<0)
             {
                 current = 0;
+                new Audio('../sounds/fail-shoot.mp3').play(); //plays the empty sound
             }
             triggerDisplay.innerHTML = `AMMO: ${current}`
+            if(current > 0){
+                new Audio('../sounds/shoot.mp3').play(); //plays the shoot sound
+            }
+  
         }
 
         triggerButton.addEventListener("click", shoot)
@@ -94,36 +98,94 @@
             function reload(){
             // Setting the needed amount to the max minus the current ammo
             var neededAmmo = max - current;
-            console.log(neededAmmo);
+            //console.log(neededAmmo);
 
             // Setting the available ammo to the minimum between the needed ammo and inventory
             var availableAmmo = Math.min(neededAmmo, inventory);
-            console.log(availableAmmo);
+            //console.log(availableAmmo);
 
             //Add the available ammo to current and subtract it from inventory
             current += availableAmmo;
             inventory -= availableAmmo;
-            console.log("Adding available ammo:"+current, "to current ammo, then subtracting from inventory:"+inventory);
+            //console.log("Adding available ammo:"+current, "to current ammo, then subtracting from inventory:"+inventory);
 
             if (inventory <= 0) {
                 inventory = 0; // Prevent inventory from going negative
                 reloadDisplay.innerHTML = `INVENTORY: NO AMMO CAN'T RELOAD`;
             }else{                                                      // Update the inventory display
                 reloadDisplay.innerHTML = `INVENTORY: ${inventory}`;
+                new Audio('../sounds/reload.mp3').play(); //plays the reload sound
             }
+
+
 
             // Update the ammo display
             triggerDisplay.innerHTML = `AMMO: ${current}`;
         }
 
+        var reloading = false;
+
+
         reloadButton.addEventListener("click", function(){
-            reload("click", reload)
+            if(reloading){
+
+            }else{  //prevents spamming the button
+                reload("click", reload) 
+
+                console.log("Reload button clicked");
+                reloadButton.classList.add("active"); //keeps the button clicked 
+                reloading = true;
+
+                setTimeout(function(){
+                reloadButton.classList.remove("active");
+                reloading = false;
+                }, 500); // how long the button stays clicked in milliseconds
+            } 
             
+
         });
     </script>
 
     <style>
-        
+        #trigger-button{
+            background-color: transparent;
+            border: none;
+        }
+        #trigger-button:hover{
+            cursor: pointer;
+            background-color: #0000000a;
+            border-radius: 70px;
+            transform: translateY(-2px);
+            transition: .2s ease-out;
+        }
+        #trigger-button:active{
+            transform: translateY(2px);
+            transform: rotate(353deg);
+        }
+
+
+
+        #reload-button{
+            background-color: transparent;
+            border: none;
+            
+        }
+        #reload-button:hover{
+            cursor: pointer;
+            background-color: #0000000a;
+            border-radius: 70px;
+            transform: translateY(-2px);
+            transition: .2s ease-out;
+        }
+        #reload-button.active{
+            animation: spin 0.5s linear;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg);}
+            100% { transform: rotate(360deg);}
+        }
+
     </style>
 </body>
 </html>
