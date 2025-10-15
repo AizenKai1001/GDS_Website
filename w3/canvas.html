@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <header>
+        <title>Canvas Lab</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../CSS/canvas.css">
+    </header>
+<body>
+    <h1>Canvas Lab</h1>
+    <canvas id="canvas" width="800" height="600"></canvas>
+
+    <script>
+        console.log("Script Loaded")
+
+        var canvas = document.getElementById("canvas")
+        var ctx = canvas.getContext("2d")
+
+        //Color for the next shapes to be drawn
+        //fills in with the color
+        ctx.fillStyle = "black"
+
+        //Lets Draw Some Lines
+        ctx.strokeStyle = "red"
+        ctx.beginPath();
+        ctx.moveTo(0,0)
+        ctx.lineTo(800,600)
+        ctx.lineTo(800,0)
+        ctx.lineTo(0,600)
+        ctx.lineTo(0,0)
+        ctx.stroke()
+
+        //close shape "ctx.closePath()"
+        //fill shape "ctx.fill()"
+        //draw shape "ctx.stroke()"
+
+        //draw circle
+        //x pos, y pos, radius, start angle, end angle , is clockwise
+        ctx.strokeStyle = "black"
+        ctx.fillStyle = "beige"
+        ctx.beginPath();
+        ctx.arc(400,300,100,0,2 * Math.PI,false)
+        ctx.closePath()
+        ctx.fill()
+        ctx.stroke()
+
+        //eyes
+        ctx.strokeStyle = "black"
+        ctx.fillStyle = "white"
+        ctx.beginPath();
+        ctx.arc(350,280,30,0,2 * Math.PI,false)
+        ctx.closePath()
+        ctx.fill()
+        ctx.stroke()
+
+        ctx.strokeStyle = "black"
+        ctx.fillStyle = "white"
+        ctx.beginPath();
+        ctx.arc(450,280,30,0,2 * Math.PI,false)
+        ctx.closePath()
+        ctx.fill()
+        ctx.stroke()
+
+        //pupil
+        ctx.strokeStyle = "white"
+        ctx.fillStyle = "black"
+        ctx.beginPath();
+        ctx.arc(335,280,10,0,2 * Math.PI,false)
+        ctx.closePath()
+        ctx.fill()
+        ctx.stroke()
+
+        ctx.strokeStyle = "white"
+        ctx.fillStyle = "black"
+        ctx.beginPath();
+        ctx.arc(465,280,10,0,2 * Math.PI,false)
+        ctx.closePath()
+        ctx.fill()
+        ctx.stroke()
+
+        //mouth
+        ctx.strokeStyle = "white"
+        ctx.fillStyle = "black"
+        ctx.beginPath();
+        ctx.arc(402,340,40,3.1,2 * Math.PI,true)
+        ctx.closePath()
+        ctx.fill()
+        ctx.stroke()()
+        ctx.fill()
+        ctx.stroke()
+
+        //tounge
+        ctx.strokeStyle = "white"
+        ctx.fillStyle = "red"
+        ctx.beginPath();
+        ctx.arc(402,370,20,3.1,2 * Math.PI,true)
+        ctx.closePath
+
+        //tounge line
+        ctx.strokeStyle = "black"
+        ctx.beginPath();
+        ctx.lineTo(402,370)
+        ctx.lineTo(402,390)
+        ctx.fill()
+        ctx.stroke()
+
+        //teeth
+        ctx.strokeStyle = "black"
+        ctx.fillStyle = "white"
+        ctx.beginPath();
+        ctx.lineTo(370,342)
+        ctx.lineTo(402,350)
+        ctx.lineTo(402,350)
+        ctx.lineTo(433,341)
+        ctx.closePath()
+        ctx.fill()
+        ctx.stroke()
+
+        ctx.strokeStyle = "black"
+        ctx.beginPath();
+        ctx.lineTo(402,350)
+        ctx.lineTo(402,342)
+        ctx.fill()
+        ctx.stroke()
+    </script>
+</body>
+</html>
