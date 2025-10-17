@@ -1,20 +1,39 @@
+:root{
+    --can-draw: green;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    border: 5px dotted black;
+    background-color: aliceblue;
+}
+
 #wrapper{
     display: grid;
     place-items: center;
     font-family: 'fantasy', 'papyrus';
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.422);
-    background-color: aliceblue;
-    background-size: 100vh;
-    border: 2px solid black;
-    padding: 5px;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 }
 
 #main-content{
-    background-size: 100vh;
-    background-color: rgb(168, 168, 168);
+    display: grid;
+    place-items: center;
     border: 2px solid black;
-    max-width: 100vh;
-    max-height: 100vh;
+    min-width: 70%;
+    min-height: 70%;
+    background-image: url("../Images/gradient.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 #shapeTitle{
@@ -31,6 +50,9 @@
     background-color: lavender;
     box-shadow: 3px 5px 10px black;;
     transition: .5 ease;
+    background-color: lightgray;
+    border-color: black;
+    border-radius: 0%;
 }
 .buttons:hover{
     transform: translate(0, -20%) scale(110%);
@@ -39,4 +61,26 @@
 .buttons:active{
     background-color: yellow;
     transform: translate(0, -10%) scale(100%)
+}
+
+
+#mousePosTXT{
+    font-size: 15px;
+    margin-left: 30px;
+}
+#mousePos{
+    color: var(--can-draw);
+}
+
+#canvas{
+    background-color: white;
+    border: 2px solid black;
+    box-shadow: 3px 5px 10px black;
+    cursor: crosshair;
+}
+
+#bg{
+    background-image: url("../Images/fall.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
